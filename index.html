@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <style>
+        body{
+            background-color: white;
+            height: 100vh;
+        }
+        main{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-open{
+            height: 30px;
+            width: 150px;
+            border: none;
+            border-radius: 15px;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: white;
+            transition: all 0.5s;
+        }
+
+        .btn-open:hover{
+            background-color: #323333;
+            color: white;
+            transition: all 0.5s;
+        }
+
+        .btn-close{
+            border: none;
+            background-color: #323333;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-close:hover{
+            background-color: white;
+            color: #323333;
+        }
+        .modal{
+            position: fixed;
+            height: 50%;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-color: rgba(128, 128, 128, 0.295);
+            color: white;
+        }
+        .modal-main{
+            position: relative;
+            max-width: 500px;
+            margin: auto;
+            margin-top: -50%;
+            background-color: #323333;
+            border-radius: 10px;
+            
+        }
+        .modal-header{
+            padding: 0 20px;
+            border-bottom: 1px solid white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        span{
+            float: right;
+            font-size: 20px; 
+            cursor: pointer; 
+            padding: 0px 7px;
+            transition: all 0.5s;
+            border-radius: 5px;
+        }
+        span:hover{
+            background-color: white;
+            color: #323333;
+            transition: all 0.5s;
+        }
+
+        @keyframes modalTop {
+            from {margin-top: -50%;}
+            to { margin-top: 60px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div id="modal" class="modal">
+        <div class="modal-main">
+            <div class="modal-header">
+                <h3 style="display: inline;">
+                    Titulo Modal
+                </h3>
+                <span onclick="fecharModal()">
+                    x
+                </span>
+            </div>
+            <div class="modal-mensagem" style="padding: 0px 20px;">
+                <h4>
+                    Conteudo Modal
+                </h4>
+             </div>
+            <div class="modal-footer" style="display: flex; justify-content: flex-end;">
+                <button class="btn-close" onclick="fecharModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <button class="btn-open" onclick="modal()">Abrir Modal</button>
+    </main>
+    
+    <script src="js.js"></script>
+</body>
+</html>
